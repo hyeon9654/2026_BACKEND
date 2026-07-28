@@ -8,7 +8,7 @@
 
 package day01; // 패키지(폴더명) 이면서 클래스의 위치 식별용도
 
-public class Exam { // class start
+public class Exam1 { // class start
 
     // public : 공개용, 다른패키지에서도 사용 가능한 클래스 뜻
     // class : 클래스 선언 사용하는 키워드
