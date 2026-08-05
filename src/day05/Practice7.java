@@ -44,8 +44,21 @@ public class Practice7 {
         pro2.name = "콜라";    pro2.price = 2000; 
         if( pro1.price > pro2.price ){ System.out.println( pro1.name );}
         else{ System.out.println( pro2.name );}
-    }
-}
+
+        // 6. 
+        Member m1 = new Member();                   // 인스턴스 생성
+        m1.id = "admin";    m1.isLogin = false;     // 0
+        System.out.println( m1.isLogin );
+        m1.isLogin = true;
+        System.out.println( m1.isLogin );
+
+        // 7.
+        Television t1 = new Television();
+        t1.channel = 11;    t1.volume -=2;
+        System.out.println( "채널"+ t1.channel ); System.out.println( "볼륨" + t1.volume );
+
+    } //m end
+} // c end
 // [1] 객체 정의
 // 1. 클래스선언 : 기존 class{ } 밖에 새로운 클래스 선언
 // 2. 멤버변수선언 : { } 안에 멤버변수 선언
@@ -72,23 +85,14 @@ class Product{
     String name;
     int price;
 }
-/*[문제 5] Product 클래스를 만드세요. name(문자열)과 price(정수) 멤버 변수를 가집니다.
-
-1. main 함수에서 Product 객체 2개를 생성하고, 각각 "새우깡", 1500과 "콜라", 2000 정보를 저장하세요.
-
-2. if문을 사용하여 두 객체의 price를 비교하고, 더 비싼 상품의 이름을 출력하세요.*/
-
-
-/*[문제 6] Member 클래스를 만드세요. id(문자열)와 isLogin(boolean) 멤버 변수를 가집니다.
-
-1. main 함수에서 Member 객체를 하나 생성하고, 아이디는 "admin", isLogin은 false로 초기화하세요.
-
-2. "로그인 전 상태: [isLogin 값]"을 출력하세요.
-
-3. 객체의 isLogin 값을 true로 변경하여 로그인 상황을 구현하세요.
-
-4. "로그인 후 상태: [isLogin 값]"을 출력하세요.*/
-
+class Member{
+    String id;
+    boolean isLogin;
+}
+class Television{
+    int channel = 7;
+    int volume = 20;
+}
 
 /*[문제 7] Television 클래스를 만드세요. channel(정수)과 volume(정수) 멤버 변수를 가집니다.
 
