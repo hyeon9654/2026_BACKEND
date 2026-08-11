@@ -1,5 +1,6 @@
 package waiting.view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import waiting.model.dto.WaitingDto;
 import waiting.controller.WaitingController;
@@ -32,6 +33,15 @@ public class WaitingView {
         System.out.println("[안내] 등록 성공");
     }else{
         System.out.println("[안내] 등록 실패");
+    }
+}
+    public void findAll(){
+    ArrayList<WaitingDto> result = wc.findAll();
+
+    for(WaitingDto waitingDto : result){
+        System.out.println("전화번호 : " + waitingDto.getPhone());
+        System.out.println("방문 인원수 : " + waitingDto.getCount());
+        System.out.println("----------------------");
     }
 }
 }

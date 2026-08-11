@@ -1,5 +1,6 @@
 package waiting.controller;
 
+import java.util.ArrayList;
 import waiting.model.dao.WaitingDao;
 import waiting.model.dto.WaitingDto;
 
@@ -17,6 +18,10 @@ public class WaitingController {
 
     public boolean save(WaitingDto waitingDto){
     boolean result = wd.save(waitingDto);
+    return result;
+}
+    public ArrayList<WaitingDto> findAll(){
+    ArrayList<WaitingDto> result = wd.findAll();
     return result;
 }
 }

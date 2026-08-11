@@ -17,6 +17,9 @@ public class WaitingDao {
     waitingList.add(waitingDto);
     return true;
     }
+    public ArrayList<WaitingDto> findAll(){
+    return waitingList;
+}
 }
 /*
 Controller에게 받은 WaitingDto를
