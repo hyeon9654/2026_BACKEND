@@ -17,7 +17,24 @@ public class WaitingView {
     private WaitingController wc = WaitingController.getInstance();
 
     public void run(){
+    while(true){
+        System.out.println("============ 대기명단 관리 ============");
+        System.out.println("1. 대기등록 2. 전체조회 0. 종료");
+        System.out.println("======================================");
+        System.out.print("선택 > ");
+
+        int ch = scan.nextInt();
+
+        if(ch == 1){
+            save();
+        }else if(ch == 2){
+            findAll();
+        }else if(ch == 0){
+            System.out.println("[안내] 프로그램을 종료합니다.");
+            break;
+        }
     }
+}
     public void save(){
     System.out.print("전화번호 : ");
     String phone = scan.next();

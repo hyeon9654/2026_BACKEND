@@ -16,6 +16,15 @@ public class Practice12{
         Shape shape = new Circle();
         shape.draw();
 
+
+        // [8]
+        Sword sword = new Sword();
+        Gun gun = new Gun();
+        Character myChr = new Character();
+        myChr.use( gun );   // 총으로 공격합니다
+        myChr.use( sword );   // 검으로 공격합니다
+        
+
     } // m end
 } // c end
 // [1]
@@ -40,11 +49,6 @@ class Triangle extends Figure{ }
 class Shape{ void draw() { }}
 class Circle extends Shape{ void draw(){ System.out.println("원을 그립니다.");}}
 
-/*[문제 5] 다형성과 오버라이딩
-1."도형을 그립니다."를 출력하는 draw() 메소드를 가진 Shape 클래스를 만드세요.
-2.Shape을 상속받고, draw() 메소드를 재정의하여 "원을 그립니다."를 출력하는 Circle 클래스를 만드세요.
-3.main 함수에서 Shape shape = new Circle(); 코드를 작성한 뒤, shape.draw()를 호출했을 때 어떤 결과가 나오는지 확인하고 그 이유를 주석으로 설명하세요.*/
-
 /*[문제 6] instanceof와 강제 타입 변환 (Downcasting)
 1. Vehicle 클래스와 이를 상속받는 Bus 클래스를 만드세요. Bus 클래스에만 checkFare() 메소드("요금을 확인합니다.")를 추가하세요.
 2. main 함수에서 Vehicle vehicle = new Bus(); 코드를 작성하세요.
@@ -61,6 +65,19 @@ class Circle extends Shape{ void draw(){ System.out.println("원을 그립니다
 1. Weapon 클래스와 이를 상속받는 Sword, Gun 클래스를 만드세요. 각 클래스는 "무기로 공격합니다.", "검으로 공격합니다.", "총으로 공격합니다."를 출력하는 attack() 메소드를 가집니다. (오버라이딩 활용)
 2. Weapon 타입의 매개변수를 받아 그 객체의 attack() 메소드를 호출하는 Character 클래스와 use(Weapon weapon) 메소드를 만드세요.
 3. main 함수에서 Sword 객체와 Gun 객체를 생성한 뒤, 이 객체들을 Character의 use() 메소드에 인자로 전달하여 각기 다른 결과가 출력되는 것을 확인하세요.*/
+// [8]
+class Character{
+    void use(Weapon weapon){ }
+}
+class Weapon{ void attack(){System.out.println("무기로 공격합니다.");} }
+class Sword extends Weapon{ void attack(){System.out.println("검으로 공격합니다.");} }
+class Gun extends Weapon{ void attack(){System.out.println("총으로 공격합니다.");} }
+
+
+
+
+
+
 
 /*[문제 9] 필드와 메소드의 오버라이딩 차이
 1. String name = "상위"; 필드와 method() 메소드("상위 메소드" 출력)를 가진 SuperClass를 만드세요.
