@@ -55,7 +55,7 @@ public class Practice1 { // class s
         System.out.printf("입력하신 성별은 %s 입니다. \n" , 성별 );
 
         // 11. 직접 풀기 
-
+        
 
     } // main e // ctrl+f5(코드실행) 
 }// class e
