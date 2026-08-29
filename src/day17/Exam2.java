@@ -1,4 +1,4 @@
-package day01;      // 클래스가 속한 폴더명/패키지
+package day17;      // 클래스가 속한 폴더명/패키지
 public class Exam2 { // 클래스 시작 
     // [1] m + 엔터 : main함수 작성 
     public static void main(String[] args) { // 메인함수 시작 

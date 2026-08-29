@@ -6,7 +6,7 @@
 
 */
 
-package day01; // 패키지(폴더명) 이면서 클래스의 위치 식별용도
+package day17; // 패키지(폴더명) 이면서 클래스의 위치 식별용도
 
 public class Exam1 { // class start
 
