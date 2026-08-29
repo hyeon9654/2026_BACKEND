@@ -13,3 +13,4 @@ insert into board( content, writer )values( "안녕하세요", "유재석" ),( "
 select * from board;
 
 create table test( no int AUTO_INCREMENT PRIMARY KEY , name varchar(30) );
+
