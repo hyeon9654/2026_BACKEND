@@ -48,38 +48,31 @@ public class Practice1 { // class s
         System.out.print("게시물 내용: "); String 내용 = scan.nextLine();
         System.out.printf("[%d 게시물 ] \n" , 번호 );
         System.out.printf("제목 : %s \n" , 제목 );
-        System.out.printf("제목 : %s \n" , 제목 );
+        System.out.printf("내용 : %s \n" , 내용 );
     
         // 10. nextChar() 제공하지 않는다. next().charAt(인덱스) : 해당인덱스의 문자1개 추출함수 , *문자열은 배열이다.*
         System.out.print("성별을 입력하세요(남/여): "); char 성별 = scan.next().charAt(0);
-        System.out.printf("입력하신 성별은 %s 입니다. \n" , 성별 );
+        System.out.printf("입력하신 성별은 %c 입니다. \n" , 성별 );
 
         // 11. 직접 풀기 
+        System.out.print("이름: ");
+        String 이름2 = scan.next();
+
+        System.out.print("나이: ");
+        int 나이2 = scan.nextInt();
+
+        System.out.print("키: ");
+        double 키 = scan.nextDouble();
+
+        System.out.print("프로그래머입니까? (true/false): ");
+        boolean 프로그래머여부 = scan.nextBoolean();
+
+        System.out.println("--- 자기소개 ---");
+        System.out.printf("이름: %s\n", 이름2);
+        System.out.printf("나이: %d\n", 나이2);
+        System.out.printf("키: %.1fcm\n", 키);
+        System.out.printf("프로그래머 여부: %b\n", 프로그래머여부);
 
 
     } // main e // ctrl+f5(코드실행) 
 }// class e
-/*
-문제 10: Scanner를 이용해 성별을 한 글자('남' 또는 '여')로 입력받아 char 타입 변수에 저장하고, 입력된 성별을 출력하시오.
-요구 조건: Scanner에는 nextChar() 함수가 없으므로 next().charAt(0)을 활용하시오.
-입력 예시:
-성별을 입력하세요(남/여): 남
-출력 예시:
-입력하신 성별은 '남' 입니다.
-*/
-
-/*
-문제 11: Scanner를 사용하여 아래 4가지 정보를 순서대로 입력받아 출력하는 코드를 작성하시오.
-이름 (String), 나이 (int), 키 (double), 프로그래머 여부 (boolean)
-입력 예시:
-이름: 김자바
-나이: 25
-키: 165.8
-프로그래머입니까? (true/false): true
-출력 예시:
---- 자기소개 ---
-이름: 김자바
-나이: 25
-키: 165.8cm
-프로그래머 여부: true
-*/
