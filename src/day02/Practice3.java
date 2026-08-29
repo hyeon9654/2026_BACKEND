@@ -26,7 +26,7 @@ public class Practice3 {
         System.out.println("비율:"+ result3 +"%" ); 
         
         // 4. 값 % 2 == 1 , 나머지가 0 이면 짝수 / 1 이면 홀수
-        System.out.print("숫자를 입력하세요 : ");
+        System.out.print("정수를 입력하세요 : ");
         int number = scan.nextInt();
         System.out.println( number % 2 == 1  ); // >= <= > < == != 비교연산자의 결과는 항상 true/false 
 
@@ -47,11 +47,12 @@ public class Practice3 {
         // 8. if/삼항 : true / false 대신에 '합격'/ '불합격'
         System.out.print("문제8] 정수 : "); int 정수8 = scan.nextInt();
         System.out.print("문제8] 정수 :"); int 정수9 = scan.nextInt();
-        System.out.println( 정수8 + 정수9 >= 90 ? "합격" : "불합격" );
+        System.out.println( 정수8 + 정수9 >= 150 ? "합격" : "불합격" );
 
         // 9. +연결연산자 : 더하기 할 값에 문자열이 포함되면 더하기가 아닌 연결이 된다.
         System.out.print("문제9] 이름: "); String 이름 = scan.next();
-        이름 = 이름.equals("유재석") ?"(방장)" : "";
+        이름 = 이름.equals("유재석")? 이름 + "(방장)" : 이름;
+        System.out.println(이름);
         
          // 10.
         System.out.print("밑변: "); double base = scan.nextDouble();
@@ -77,7 +78,7 @@ public class Practice3 {
         System.out.print("아이디: ");   String 아이디 = scan.next();
         System.out.print("이메일: ");   String 이메일 = scan.next();
         boolean result4 = 아이디.equals("admin") || 이메일.equals("admin@test.com");
-        System.out.println( result4 ? "관리자" : "일반 사용지" );
+        System.out.println( result4 ? "관리자" : "일반 사용자" );
 
         // 15. 삼항연산자 중첩 , 조건?참: 조건?참: 조건?참:거짓
         System.out.println("점수를 입력하세요:");   int score3 = scan.nextInt();

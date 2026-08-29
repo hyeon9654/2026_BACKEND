@@ -4,92 +4,121 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Practice6 {
+
     public static void main(String[] args) {
-        // 1. 타입[] 변수명 = 1[ 값1, 값2, 값3 ], 배열변수[인덱스]
-        int[ ] number1 = { 10, 20, 30, 40, 50 }; System.out.println( number1[2]);
-    
-        // 2. 타입[] 변수명 = new 타입[ 총개수 ];
-        String[ ] season = new String[ 3 ];
-        season[0] = "봄";   season[1] = "봄";   season[2] = "가을";      
+
+        Scanner scan = new Scanner(System.in);
+
+        // 1.
+        int[] numbers1 = {10, 20, 30, 40, 50};
+        System.out.println(numbers1[2]);
+
+        // 2.
+        String[] season = new String[3];
+        season[0] = "봄";
+        season[1] = "여름";
+        season[2] = "가을";
         System.out.println(Arrays.toString(season));
 
-        // 3. for vs 향상된 for문
-        String[] fruits = {"사과", "바나나", "포도", "딸기" };
-        for( int index = 0; index <= fruits.length - 1; index++ ){ System.out.println(fruits[index]);}
-        // vs
-        for( String str : fruits ){ System.out.println( str );}
+        // 3.
+        String[] fruits = {"사과", "바나나", "포도", "딸기"};
 
-        // 4.  
-        int[] scores1 = { 85, 92, 78, 65, 95 };
-        int 합계4 = 0;
-        for( int score : scores1 ){  // :콜론 기주능로 오른쪽에 배열, 왼쪽에는 타입 반복변수명
-            합계4 += score;
+        for (int i = 0; i < fruits.length; i++) {
+            System.out.println(fruits[i]);
         }
-        System.out.printf( "합계: %d, 평균: %f \n", 합계4, 합계4 / (double)scores1.length );
-    
-        // 5. 
-        int[] scores2 = { 77, 82, 100, 54, 96 };
-        for( int score : scores2 ){
-            if( score == 100 ){
-                System.out.println("만점자!"); break;
+
+        // 4.
+        int[] scores1 = {85, 92, 78, 65, 95};
+        int sum4 = 0;
+
+        for (int i = 0; i < scores1.length; i++) {
+            sum4 += scores1[i];
+        }
+
+        double avg4 = (double) sum4 / scores1.length;
+        System.out.println("합계: " + sum4);
+        System.out.println("평균: " + avg4);
+
+        // 5.
+        int[] scores2 = {77, 82, 100, 54, 96};
+
+        for (int i = 0; i < scores2.length; i++) {
+            if (scores2[i] == 100) {
+                System.out.println("100점 만점자를 찾았습니다!");
+                break;
             }
         }
-    
-        // 6. 
-        String[] bloodTypes = { "A", "B", "O", "AB", "A", "B", "A" };
-        int count = 0;
-        for( String str : bloodTypes ){
-            if( str.equals("A")){ count++; }    // 만약에 "A"이면 count 1 증가
+
+        // 6.
+        String[] bloodTypes = {"A", "B", "O", "AB", "A", "B", "A"};
+        int count6 = 0;
+
+        for (int i = 0; i < bloodTypes.length; i++) {
+            if (bloodTypes[i].equals("A")) {
+                count6++;
+            }
         }
-        System.out.println( count );
 
-        // 7. 
-        int[ ] numbers2 = {23, 5, 67, 12, 88, 34};
-        int max = numbers2[0]; // 첫번째 값을 max 정하고 , 만약에 max 보다 i번째 요소값이 더 크면 max에 대입  
-        for( int number : numbers2 ){ if( max < number ) max = number; }
-        System.out.println( max );
+        System.out.println("A형 혈액형 인원: " + count6 + "명");
 
-        // 8. 
+        // 7.
+        int[] numbers2 = {23, 5, 67, 12, 88, 34};
+        int max7 = numbers2[0];
+
+        for (int i = 1; i < numbers2.length; i++) {
+            if (numbers2[i] > max7) {
+                max7 = numbers2[i];
+            }
+        }
+
+        System.out.println("가장 큰 값: " + max7);
+
+        // 8.
         String[] products = {"볼펜", "노트", "지우개"};
         int[] stock = {10, 5, 20};
-        Scanner scan = new Scanner( System.in ); // 1.입력객체 
-        System.out.print("구매할 상품명: ");    
-        String 상품명 = scan.next();
-        System.out.print("구매할 수량: ");      
-        int 수량 = scan.nextInt();
 
-        boolean find = false; // false 동일한제품명 없다. true 있다.
-        for( int index = 0 ; index <= products.length - 1 ; index++ ){
-            if( 상품명.equals( products[index] ) ){ // [1]입력받은 상품명 과 index번째 상품명과 같으면 
-                find = true; // 동일한 제품명 찾음 기록
-                if( 수량 <= stock[index] ){ // [2] 입력받은 수량 과 index번째 수량보다 이하이면 
-                    stock[ index ] -= 수량; // 수량 차감 
-                }else{
-                    System.out.println("재고가 부족합니다.");
-                }
+        System.out.print("구매할 상품명: ");
+        String productName = scan.next();
+
+        System.out.print("구매할 수량: ");
+        int productCount = scan.nextInt();
+
+        int productIndex = -1;
+
+        for (int i = 0; i < products.length; i++) {
+            if (products[i].equals(productName)) {
+                productIndex = i;
+                break;
             }
         }
-        if( find == false ) System.out.println("없는 제품명입니다.");
+
+        if (productIndex == -1) {
+            System.out.println("없는 제품명입니다.");
+        } else if (stock[productIndex] >= productCount) {
+            stock[productIndex] -= productCount;
+            System.out.println("구매 완료!");
+            System.out.println("남은 재고: " + stock[productIndex]);
+        } else {
+            System.out.println("재고가 부족합니다.");
+        }
 
         // 9.
         String[] movieNames = {"히든페이스", "위키드", "글래디에이터2", "청설"};
         int[] movieRatings = {8, 4, 7, 6};
-        for( int index = 0 ; index <= movieNames.length - 1 ; index++ ){
-            // [1] 영화 이름들을 하나씩 출력 
-            String name = movieNames[index];
-            System.out.print( name );
-            // [2] 별점 출력 , 1~10
-            for( int star = 1 ; star <= 10 ; star++ ){
-                // * 현재 별 보다 inde번째 평점이 더 크면 
-                if( star <= movieRatings[index] ){
-                    System.out.print("★ ");
-                }else{
-                    System.out.print("☆ ");
-                }
+
+        for (int i = 0; i < movieNames.length; i++) {
+            System.out.print(movieNames[i] + " ");
+
+            for (int j = 1; j <= movieRatings[i]; j++) {
+                System.out.print("★");
             }
-            // [*] 줄바꿈
+
+            for (int j = movieRatings[i]; j < 10; j++) {
+                System.out.print("☆");
+            }
+
             System.out.println();
-        } // for end 
+        }
 
         // 10.
         String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234"};
@@ -113,6 +142,5 @@ public class Practice6 {
                 "분 주차, 최종 요금: " + fee + "원"
             );
         }
-       
-    } // m end
-} // c end
+    } // main end
+} // class end
