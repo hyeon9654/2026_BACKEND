@@ -71,7 +71,7 @@ public class BoardDao extends BaseDao {
             PreparedStatement ps = conn.prepareStatement( sql );
             ps.setInt( 1 , no ); // SQL 문법내 첫번째 ? 에 매개변수 값 대입 
             int result = ps.executeUpdate();
-            if( result == 1 ) return true;
+            if( result == 1 ) return true;  
         }catch( SQLException e ){ System.out.println( e ); }
         return false;
     }
