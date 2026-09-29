@@ -46,17 +46,12 @@ public class Practice11 {
          }
         list3.add(str);
         }
-
-System.out.println( list3 );
-
-
-// [8]
-ArrayList<String> list4 = new ArrayList<>();
-list4.add("국어"); list4.add("수학"); list4.add("사회"); list4.add("과학");
-
-list4.set(1, "영어");
-
-System.out.println( list4 );
+        System.out.println( list3 );
+        // [8]
+        ArrayList<String> list4 = new ArrayList<>();
+        list4.add("국어"); list4.add("수학"); list4.add("사회"); list4.add("과학");
+        list4.set(1, "영어");
+        System.out.println( list4 );
     } // main end 
 } // class end 
 class Book{ 
